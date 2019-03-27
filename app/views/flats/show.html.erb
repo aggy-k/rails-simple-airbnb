@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+
+  <div class="col-12 col-lg-6">
+    <h3><%= @flat.name.split(' ').map { |w| w.capitalize }.join(" ") %></h3>
+    <p>
+      <%= image_tag @flat.image, class: "img-lg" %>
+    </p>
+    <p><%= @flat.address %></p>
+    <p><%= @flat.description %></p>
+    <p>Price per night: <%= @flat.price_per_night %></p>
+    <p>Max num. of guests: <%= @flat.number_of_guests %></p>
+  </div>
+</div>

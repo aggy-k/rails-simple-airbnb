@@ -1,0 +1,15 @@
+<h3 class='text-center'>Add a new flat</h3>
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-6">
+    <%= simple_form_for(@flat) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :image %>
+        <%= f.input :description %>
+        <%= f.input :price_per_night %>
+        <%= f.input :number_of_guests, collection: [1, 2, 3, 4] %>
+        <%= f.submit %>
+    <% end %>
+
+  </div>
+</div>

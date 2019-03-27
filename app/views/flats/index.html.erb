@@ -1,0 +1,26 @@
+
+<div class="row justify-content-center">
+    <% @flats.each do |f| %>
+      <div class="col-6 col-lg-4 my-3">
+        <div class="card" style="width: 22rem;">
+          <%= image_tag f.image, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= f.name.split(' ').map { |w| w.capitalize }.join(" ") %></h5>
+            <p class="card-text"><%= f.address %></p>
+            <!-- <p class="card-text"> -->
+            <div class="row justify-content-between px-3">
+              <p><i class="fas fa-pound-sign"></i> <%= f.price_per_night %></p>
+              <p><i class="fas fa-users"></i> <%= f.number_of_guests %></p>
+            </div>
+            <!-- </p> -->
+            <ul class="list-inline">
+              <li class="list-inline-item"><%= link_to 'More info', flat_path(f) %></li>
+              <li class="list-inline-item"><%= link_to 'Edit', edit_flat_path(f) %></li>
+              <li class="list-inline-item"><%= link_to 'Remove', flat_path(f), method: :delete, data: { confirm: "Delete?" } %></li>
+            </ul>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
